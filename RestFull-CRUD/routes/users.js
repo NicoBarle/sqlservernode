@@ -8,6 +8,19 @@ const config = {
   database: 'barletta.nicolas', //(Nome del DB)
 }
 
+router.get('/attori', function(req, res, next) {
+  sql.connect(config, err => {
+    if(err) console.log(err);  // ... error check
+    
+    // Query
+    let sqlRequest = new sql.Request();  //Oggetto che serve a creare le query
+    sqlRequest.query('select * from [dbo].[cr-unit-attributes]', (err, result) => {
+        if (err) console.log(err); // ... error checks
+        res.send(result);  //Invio il risultato
+    });
+  });
+});
+
 /* GET users listing. */
 router.get('/attori/:name', function(req, res, next) {
   sql.connect(config, err => {
@@ -15,7 +28,7 @@ router.get('/attori/:name', function(req, res, next) {
     
     // Query
     let sqlRequest = new sql.Request();  //Oggetto che serve a creare le query
-    sqlRequest.query(`select * from [dbo].[Customer] where FirstName = '${req.params.name}'`, (err, result) => {
+    sqlRequest.query(`select * from [dbo].[cr-unit-attributes] where Unit = '${req.params.name}'`, (err, result) => {
         if (err) console.log(err); // ... error checks
         console.log(req.params.name);
         res.send(result);  //Invio il risultato
