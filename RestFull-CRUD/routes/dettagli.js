@@ -31,15 +31,16 @@ let executeQuery = function (res, query, next) {
 }
 
 let mandaAlPug = function(res, recordset){
-    res.render('index', {
-        title: 'Tutte le unità',
-        re: recordset,
+    let re = recordset[0];
+    res.render('dettagli', {
+        title: 'Singola Unità',
+        re: re
     })
 }
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  let sql = 'select * from dbo.[cr-unit-attributes]';
+router.get('/:Unit', function(req, res, next) {
+  let sql = `select * from dbo.[cr-unit-attributes] where Unit = '${req.params.Unit}'`;
   executeQuery(res, sql, next);
 });
 
