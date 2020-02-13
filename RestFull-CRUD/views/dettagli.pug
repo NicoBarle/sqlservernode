@@ -1,11 +1,24 @@
+extends layout
 block content
   h1= title
+
+   ul
+    li
+      a.active(href='../') Elenco Unità
+    li
+      a.active(href='../aggiungi') Aggiungi Unità
+  br
+
   p Welcome to #{title}
   h1 Nome: #{re.Unit}
-  h1 Nome: #{re.Unit}
-  h1 Nome: #{re.Unit}
-  h1 Nome: #{re.Unit}
-  h1 Nome: #{re.Unit}
-  h1 Nome: #{re.Unit}
-  h1 Nome: #{re.Unit}
-  
+  h1 Costo: #{re.Cost}
+  h1 Vel Attacco: #{re.Hit_Speed}
+  h1 Velocità: #{re.Speed}
+  h1 Tempo di schieramento: #{re.Deploy_Time}
+  h1 Raggio: #{re.Range}
+  h1 Target: #{re.Target}
+  h1 Count: #{re.Count}
+  h1 Transport: #{re.Transport}
+  h1 Tipo: #{re.Type}
+  h1 Rarità: #{re.Rarity}
+  br

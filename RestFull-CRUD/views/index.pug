@@ -1,7 +1,13 @@
+extends layout
 block content
   h1= title
   p Welcome to #{title}
-
+  ul
+    li
+      a.active(href='/') Elenco Unità
+    li
+      a.active(href='/aggiungi') Aggiungi Unità
+  br
   each r in re
     h1 #{r.Unit}
     a(href=`/dettagli/${r.Unit}`)
