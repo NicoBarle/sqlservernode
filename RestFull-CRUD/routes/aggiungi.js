@@ -29,11 +29,20 @@ let executeQuery = function (res, query, next, unit) {
         sql.close();
         return;
       }
-    mandaAlPug(res, unit);
+    renderPug(res, unit);
     return;
     });
 
   });
+}
+
+function renderPug(res, unit)
+{
+    let re = unit // oggetto re di tipo unit che è il risultato
+    res.render('dettagli', {
+          title: `Unità aggiunta: ${re.Unit}`,
+          re: re,
+    });
 }
 
 let mandaAlPug = function(res, unit){
