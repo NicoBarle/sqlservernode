@@ -24,7 +24,9 @@ export class AppComponent {
   }
 
 addUnit(newUnit: HTMLInputElement, newCost: HTMLInputElement, newHitSpeed: HTMLInputElement): boolean {
-    let newData: Unit = new Unit();
+    //DOMANDA 8
+    //SE USIAMO IL COSTRUTTORE, newData cambierà in questo modo
+    let newData: Unit = new Unit();   //al posto di questa scrittura, scriviamo let newData = new Unit(newUnit.value, newCost.value, newHitSpeed.value)
     newData.Unit = newUnit.value;
     newData.Cost = newCost.value;
     newData.Hit_Speed = newHitSpeed.value;

@@ -12,3 +12,8 @@ export class Unit
     Type: string;
     Rarity: string;
 }
+
+//DOMANDA 8
+//creiamo il costruttore
+
+//constructor(public Unit: string, public Cost: string, public Hit_Speed: string)
